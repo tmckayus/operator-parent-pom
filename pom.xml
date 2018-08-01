@@ -5,7 +5,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.radanalytics</groupId>
-    <artifactId>parent-pom</artifactId>
+    <artifactId>operator-parent-pom</artifactId>
     <version>0.1.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
