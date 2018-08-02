@@ -4,4 +4,5 @@ script:
   - ./mvnw test -B
 
 deploy:
-  - ./mvnw -s ./.travis/settings.xml clean deploy
+  provider: script
+  script: ./mvnw -s ./.travis/settings.xml clean deploy
