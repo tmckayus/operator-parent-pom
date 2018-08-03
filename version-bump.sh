@@ -2,6 +2,17 @@
 
 checkParams() {
   [[ $# -lt 1 ]] && printUsage && exit 1
+  if [[ "$1" != "micro" ]] && [[ "$1" != "minor" ]] && [[ "$1" != "major" ]]; then
+    printUsage
+    exit 1
+  fi
+}
+
+checkUntracked() {
+  [[ -z $(git status -s) ]] || {
+    echo "there are untracked files, commit them first"
+    exit 1
+  }
 }
 
 printUsage() {
@@ -11,7 +22,7 @@ printUsage() {
 gitFu() {
   [[ $# -lt 2 ]] && "usage: gitFu x.y.z x.y.z" && exit 1
   old=$1
-  new=$1
+  new=$2
   mvn versions:set -DnewVersion=$new
   git add pom.xml
   set -x
@@ -20,10 +31,12 @@ gitFu() {
 }
 
 main() {
+  checkUntracked
+
   checkParams $@
-  PARAM=$1\
+  PARAM=$1
+
   CURRENT=`mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version|grep -Ev "(^\[|Download\w+:)"`
-  echo "Current: $CURRENT"
   VERSION=`echo $CURRENT | sed 's/-SNAPSHOT//g'`
 
   maj=`echo $VERSION | sed 's/^\([0-9]\+\)\..*$/\1/g'`
@@ -31,6 +44,7 @@ main() {
   mic=`echo $VERSION | sed 's/.*\.\([0-9]\+\)$/\1/g'`
 
   echo "Current version: $CURRENT"
+  echo "version: $VERSION"
   echo "major: $maj"
   echo "minor: $min"
   echo "micro: $mic"
