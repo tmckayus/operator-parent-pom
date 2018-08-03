@@ -22,7 +22,7 @@ releaseSnapshot() {
 }
 
 release() {
-    openssl aes-256-cbc -K $encrypted_07269c4bae81_key -iv $encrypted_07269c4bae81_iv -in ./.travis/.codesigning.asc.enc -out ./signing.asc -d
+    openssl aes-256-cbc -K $encrypted_07269c4bae81_key -iv $encrypted_07269c4bae81_iv -in ./.travis/.signing.asc.enc -out ./signing.asc -d
     gpg --fast-import ./signing.asc
     ./mvnw -s ./.travis/settings.xml clean deploy -P release
 }
