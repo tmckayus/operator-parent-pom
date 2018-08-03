@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.radanalytics</groupId>
     <artifactId>operator-parent-pom</artifactId>
-    <version>0.1.17</version>
+    <version>0.1.18-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Operator Parent POM</name>
     <description>parent pom.xml file that is supposed to be reused as parent pom in custom operators</description>
