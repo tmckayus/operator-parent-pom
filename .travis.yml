@@ -5,4 +5,4 @@ script:
 
 deploy:
   provider: script
-  script: ./mvnw -s ./.travis/settings.xml clean deploy
+  script: ./.travis/.travis.release.jars.sh
