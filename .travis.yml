@@ -4,5 +4,6 @@ script:
   - ./mvnw test -B
 
 deploy:
-  provider: script
-  script: ./.travis/.travis.release.jars.sh
+  - provider: script
+    all_branches: true
+    script: ./.travis/.travis.release.jars.sh
