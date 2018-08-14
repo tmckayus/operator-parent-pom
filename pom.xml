@@ -226,6 +226,7 @@
                     <configuration>
                         <serverId>ossrh</serverId>
                         <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <stagingProfileId>5dec6582c6ad79</stagingProfileId>
                         <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         <skipStaging>true</skipStaging>
                     		<tags>
