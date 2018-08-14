@@ -47,6 +47,7 @@
         <jacoco.version>0.7.9</jacoco.version>
         <license.maven.version>2.11</license.maven.version>
 
+        <commons-lang.version>2.4</commons-lang.version>
         <fabric8.kubernetes-client.version>4.0.3</fabric8.kubernetes-client.version>
         <fabric8.kubernetes-model.version>3.0.1</fabric8.kubernetes-model.version>
         <fabric8.zjsonpatch.version>0.3.0</fabric8.zjsonpatch.version>
@@ -56,6 +57,11 @@
     </properties>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
             <dependency>
                 <groupId>io.fabric8</groupId>
                 <artifactId>kubernetes-client</artifactId>
