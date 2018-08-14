@@ -35,8 +35,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <add.release.arguments />
-
         <maven.assembly.version>3.1.0</maven.assembly.version>
         <maven.buildnumber.version>1.4</maven.buildnumber.version>
         <maven.compilerplugin.version>3.8.0</maven.compilerplugin.version>
@@ -219,21 +217,6 @@
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.3</version>
-                    <configuration>
-                        <arguments>-DskipTests ${add.release.arguments}</arguments>
-                        <preparationGoals>clean install</preparationGoals>
-                        <pushChanges>false</pushChanges>
-                        <localCheckout>true</localCheckout>
-                        <tagNameFormat>@{project.version}</tagNameFormat>
-                        <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <useReleaseProfile>false</useReleaseProfile>
-                        <releaseProfiles>release</releaseProfiles>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.jsonschema2pojo</groupId>
