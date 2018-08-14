@@ -45,6 +45,7 @@
         <maven.jarplugin.version>3.1.0</maven.jarplugin.version>
         <maven.shade.version>3.1.1</maven.shade.version>
         <maven.surefire.version>2.20.1</maven.surefire.version>
+        <jsonschema2pojo-maven-plugin>0.5.1</jsonschema2pojo-maven-plugin>
 
         <jacoco.version>0.7.9</jacoco.version>
         <license.maven.version>2.11</license.maven.version>
@@ -237,6 +238,22 @@
 			                      <artifactVersion>${project.version}</artifactVersion>
 		                    </tags>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.jsonschema2pojo</groupId>
+                    <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+                    <version>${jsonschema2pojo-maven-plugin}</version>
+                    <configuration>
+                        <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
+                        <targetPackage>io.radanalytics.types</targetPackage>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>
