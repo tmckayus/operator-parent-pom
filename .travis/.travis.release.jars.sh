@@ -26,8 +26,8 @@ release() {
     gpg --fast-import ./signing.asc &> /dev/null
     ./mvnw -s ./.travis/settings.xml clean deploy -DskipLocalStaging=true -P release
     sleep 30
-    local _repo_id=`./mvnw nexus-staging:rc-list | grep "ioradanalytics".*OPEN | cut -d' ' -f2 | tail -1`
-    ./mvnw nexus-staging:close nexus-staging:release -DstagingRepositoryId=${_repo_id}
+    local _repo_id=`./mvnw -s ./.travis/settings.xml nexus-staging:rc-list | grep "ioradanalytics".*OPEN | cut -d' ' -f2 | tail -1`
+    ./mvnw -s ./.travis/settings.xml nexus-staging:close nexus-staging:release -DstagingRepositoryId=${_repo_id}
 }
 
 main
