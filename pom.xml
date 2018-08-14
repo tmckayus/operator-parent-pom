@@ -35,6 +35,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
+        <add.release.arguments />
+
         <maven.assembly.version>3.1.0</maven.assembly.version>
         <maven.buildnumber.version>1.4</maven.buildnumber.version>
         <maven.compilerplugin.version>3.8.0</maven.compilerplugin.version>
@@ -219,20 +221,18 @@
                     </executions>
                 </plugin>
                 <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.7</version>
-                    <extensions>true</extensions>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
                     <configuration>
-                        <serverId>ossrh</serverId>
-                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <stagingProfileId>5dec6582c6ad79</stagingProfileId>
-                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                        <skipStaging>true</skipStaging>
-                    		<tags>
-                    			  <localUsername>${env.USER}</localUsername>
-			                      <artifactVersion>${project.version}</artifactVersion>
-		                    </tags>
+                        <arguments>-DskipTests ${add.release.arguments}</arguments>
+                        <preparationGoals>clean install</preparationGoals>
+                        <pushChanges>false</pushChanges>
+                        <localCheckout>true</localCheckout>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <releaseProfiles>release</releaseProfiles>
                     </configuration>
                 </plugin>
                 <plugin>
