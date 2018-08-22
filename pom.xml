@@ -50,6 +50,8 @@
         <maven.buildnumber.version>1.4</maven.buildnumber.version>
         <maven.compilerplugin.version>3.8.0</maven.compilerplugin.version>
         <maven.failsafe.version>2.20.1</maven.failsafe.version>
+        <maven.jackson-databind.version>2.7.9.4</maven.jackson-databind.version>
+        <maven.jackson-core.version>2.7.9</maven.jackson-core.version>
         <maven.jarplugin.version>3.1.0</maven.jarplugin.version>
         <maven.shade.version>3.1.1</maven.shade.version>
         <maven.surefire.version>2.20.1</maven.surefire.version>
@@ -77,6 +79,26 @@
                 <groupId>io.fabric8</groupId>
                 <artifactId>kubernetes-client</artifactId>
                 <version>${fabric8.kubernetes-client.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-databind</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-core</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${maven.jackson-databind.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${maven.jackson-core.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.fabric8</groupId>
