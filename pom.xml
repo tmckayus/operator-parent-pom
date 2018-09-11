@@ -69,6 +69,7 @@
         <fabric8.kubernetes-client.version>4.0.5</fabric8.kubernetes-client.version>
         <fabric8.kubernetes-model.version>3.0.3</fabric8.kubernetes-model.version>
         <fabric8.zjsonpatch.version>0.3.0</fabric8.zjsonpatch.version>
+        <guava.version>22</guava.version>
         <snakeyaml.version>1.23</snakeyaml.version>
         <reflections.version>0.9.11</reflections.version>
         <slf4j.version>1.7.25</slf4j.version>
@@ -93,6 +94,10 @@
                     <exclusion>
                         <groupId>com.fasterxml.jackson.core</groupId>
                         <artifactId>jackson-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-collections</groupId>
+                        <artifactId>commons-collections</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -135,6 +140,17 @@
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>
                 <version>${reflections.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.guava</groupId>
+                        <artifactId>guava</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
