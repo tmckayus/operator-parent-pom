@@ -53,11 +53,13 @@
         <maven.jackson-databind.version>2.7.9.4</maven.jackson-databind.version>
         <maven.jackson-core.version>2.7.9</maven.jackson-core.version>
         <maven.jarplugin.version>3.1.0</maven.jarplugin.version>
+        <maven.nexus.staging.version>1.6.8</maven.nexus.staging.version>
         <maven.shade.version>3.1.1</maven.shade.version>
         <maven.surefire.version>2.20.1</maven.surefire.version>
         <jsonschema2pojo-maven-plugin>0.5.1</jsonschema2pojo-maven-plugin>
 
         <jacoco.version>0.7.9</jacoco.version>
+        <jcabi.version>1.1</jcabi.version>
         <license.maven.version>2.11</license.maven.version>
 
         <commons-lang.version>2.6</commons-lang.version>
@@ -65,6 +67,7 @@
         <fabric8.kubernetes-model.version>3.0.3</fabric8.kubernetes-model.version>
         <fabric8.zjsonpatch.version>0.3.0</fabric8.zjsonpatch.version>
         <snakeyaml.version>1.23</snakeyaml.version>
+        <reflections.version>0.9.11</reflections.version>
         <slf4j.version>1.7.25</slf4j.version>
         <junit.version>4.12</junit.version>
     </properties>
@@ -123,12 +126,12 @@
             <dependency>
                 <groupId>com.jcabi</groupId>
                 <artifactId>jcabi-manifests</artifactId>
-                <version>1.1</version>
+                <version>${jcabi.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>
-                <version>0.9.11</version>
+                <version>${reflections.version}</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -276,7 +279,7 @@
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.8</version>
+                    <version>${maven.nexus.staging.version}</version>
                     <extensions>true</extensions>
                     <configuration>
                         <serverId>ossrh</serverId>
