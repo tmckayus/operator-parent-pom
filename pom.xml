@@ -71,7 +71,7 @@
         <fabric8.kubernetes-model.version>3.0.3</fabric8.kubernetes-model.version>
         <fabric8.zjsonpatch.version>0.3.0</fabric8.zjsonpatch.version>
         <prometheus.metrics.version>0.6.0</prometheus.metrics.version>
-        <guava.version>22.0</guava.version>
+        <guava.version>23.0</guava.version>
         <snakeyaml.version>1.23</snakeyaml.version>
         <reflections.version>0.9.11</reflections.version>
         <slf4j.version>1.7.25</slf4j.version>
