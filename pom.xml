@@ -54,6 +54,7 @@
         <maven.jackson-databind.version>2.7.9.4</maven.jackson-databind.version>
         <maven.jackson-core.version>2.7.9</maven.jackson-core.version>
         <maven.javadoc.plugin.version>3.0.1</maven.javadoc.plugin.version>
+        <maven.release.plugin.version>2.5.3</maven.release.plugin.version>
         <maven.source.plugin.version>3.0.1</maven.source.plugin.version>
         <maven.jarplugin.version>3.1.1</maven.jarplugin.version>
         <maven.nexus.staging.version>1.6.8</maven.nexus.staging.version>
@@ -316,6 +317,15 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven.release.plugin.version}</version>
+                    <configuration>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
+                        <releaseProfiles>release</releaseProfiles>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
