@@ -24,7 +24,7 @@ releaseSnapshot() {
 release() {
     openssl aes-256-cbc -K $encrypted_07269c4bae81_key -iv $encrypted_07269c4bae81_iv -in ./.travis/.signing.asc.enc -out ./signing.asc -d
     gpg --fast-import ./signing.asc &> /dev/null
-    ./mvnw -s ./.travis/settings.xml clean deploy -DskipLocalStaging=true -P release
+    ./mvnw -s ./.travis/settings.xml clean deploy -DskipLocalStaging=true -Pstaging-release
     sleep 10
     local _repo_ids=`./mvnw -s ./.travis/settings.xml nexus-staging:rc-list | grep "ioradanalytics".*OPEN | cut -d' ' -f2 | tail -2`
     for _id in ${_repo_ids}; do mvn -s ./.travis/settings.xml nexus-staging:close nexus-staging:release -DstagingRepositoryId=${_id}; done
