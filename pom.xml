@@ -36,6 +36,10 @@
             <url>https://oss.sonatype.org/content/repositories/releases</url>
         </repository>
         <repository>
+            <id>sonatype-staging</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <repository>
             <id>sonatype-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
@@ -357,7 +361,7 @@
                     <version>${maven.nexus.staging.version}</version>
                     <extensions>true</extensions>
                     <configuration>
-                        <serverId>ossrh</serverId>
+                        <serverId>sonatype-staging</serverId>
                         <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                         <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         <skipStaging>true</skipStaging>
@@ -378,6 +382,10 @@
         <repository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
+        <repository>
+            <id>sonatype-staging</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
     <profiles>
