@@ -72,7 +72,7 @@
         <commons-lang.version>2.6</commons-lang.version>
         <fabric8.kubernetes-model.version>4.2.2</fabric8.kubernetes-model.version>
         <fabric8.kubernetes-client.version>4.2.2</fabric8.kubernetes-client.version>
-        <fabric8.openshift-client.version>4.2.2</fabric8.openshift-client.version>
+        <fabric8.openshift-client.version>4.3.0</fabric8.openshift-client.version>
         <fabric8.zjsonpatch.version>0.3.0</fabric8.zjsonpatch.version>
         <prometheus.metrics.version>0.6.0</prometheus.metrics.version>
         <guava.version>23.0</guava.version>
