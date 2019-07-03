@@ -305,7 +305,15 @@
                     <configuration>
                         <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
                         <targetPackage>io.radanalytics.types</targetPackage>
+                        <customAnnotator>io.radanalytics.operator.annotator.RegisterForReflectionAnnotator</customAnnotator>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>io.radanalytics</groupId>
+                            <artifactId>abstract-operator-annotator</artifactId>
+                            <version>0.6.7-SNAPSHOT</version>
+                        </dependency>
+                    </dependencies>
                     <executions>
                         <execution>
                             <goals>
