@@ -50,7 +50,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <quarkus.version>0.19.0</quarkus.version>
+        <quarkus.version>0.19.1</quarkus.version>
 
         <maven.assembly.version>3.1.0</maven.assembly.version>
         <maven.buildnumber.version>1.4</maven.buildnumber.version>
